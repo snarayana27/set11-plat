@@ -1,106 +1,72 @@
 "use client";
-
 import {
-  Card,
-  Text,
-  Title,
+  AreaChart,
   BarList,
+  Bold,
+  Card,
   Flex,
   Grid,
-  Bold,
-  AreaChart,
+  Text,
+  Title,
 } from "@tremor/react";
-import Image from "next/image";
 
-const chartdata = [
-  {
-    date: "Jan 23",
-    Visitors: 2890,
-  },
-  {
-    date: "Feb 23",
-    Visitors: 2756,
-  },
-  {
-    date: "Mar 23",
-    Visitors: 3322,
-  },
-  {
-    date: "Apr 23",
-    Visitors: 3470,
-  },
-  {
-    date: "May 23",
-    Visitors: 3475,
-  },
-  {
-    date: "Jun 23",
-    Visitors: 3129,
-  },
+// Simulated data for sports club analytics
+const attendanceData = [
+  { date: "Jan 23", "Event Attendance": 120 },
+  { date: "Feb 23", "Event Attendance": 135 },
+  { date: "Mar 23", "Event Attendance": 150 },
+  { date: "Apr 23", "Event Attendance": 160 },
+  { date: "May 23", "Event Attendance": 175 },
+  { date: "Jun 23", "Event Attendance": 180 },
 ];
 
-const pages = [
-  { name: "/platforms-starter-kit", value: 1230 },
-  { name: "/vercel-is-now-bercel", value: 751 },
-  { name: "/nextjs-conf", value: 471 },
-  { name: "/150m-series-d", value: 280 },
-  { name: "/about", value: 78 },
+const newMembers = [
+  { name: "Jan 23", value: 20 },
+  { name: "Feb 23", value: 25 },
+  { name: "Mar 23", value: 30 },
+  { name: "Apr 23", value: 35 },
+  { name: "May 23", value: 40 },
+  { name: "Jun 23", value: 45 },
 ];
 
-const referrers = [
-  { name: "t.co", value: 453 },
-  { name: "vercel.com", value: 351 },
-  { name: "linkedin.com", value: 271 },
-  { name: "google.com", value: 191 },
-  {
-    name: "news.ycombinator.com",
-    value: 71,
-  },
-];
-
-const countries = [
-  { name: "United States of America", value: 789, code: "US" },
-  { name: "India", value: 676, code: "IN" },
-  { name: "Germany", value: 564, code: "DE" },
-  { name: "United Kingdom", value: 234, code: "GB" },
-  { name: "Spain", value: 191, code: "ES" },
+const resourceUsage = [
+  { name: "Tennis Courts", value: 320 },
+  { name: "Cricket Grounds", value: 280 },
+  { name: "Gym", value: 350 },
+  { name: "Soccer Field", value: 200 },
+  { name: "Basketball Court", value: 150 },
 ];
 
 const categories = [
   {
-    title: "Top Pages",
-    subtitle: "Page",
-    data: pages,
+    title: "New Members",
+    subtitle: "Month",
+    data: newMembers,
   },
   {
-    title: "Top Referrers",
-    subtitle: "Source",
-    data: referrers,
-  },
-  {
-    title: "Countries",
-    subtitle: "Country",
-    data: countries,
+    title: "Resource Usage",
+    subtitle: "Facility",
+    data: resourceUsage,
   },
 ];
 
-export default function AnalyticsMockup() {
+export default function SportsClubAnalytics() {
   return (
     <div className="grid gap-6">
       <Card>
-        <Title>Visitors</Title>
+        <Title>Event Attendance</Title>
         <AreaChart
           className="mt-4 h-72"
-          data={chartdata}
+          data={attendanceData}
           index="date"
-          categories={["Visitors"]}
-          colors={["indigo"]}
+          categories={["Event Attendance"]}
+          colors={["green"]} // Primary color for emphasis
           valueFormatter={(number: number) =>
             Intl.NumberFormat("us").format(number).toString()
           }
         />
       </Card>
-      <Grid numItemsSm={2} numItemsLg={3} className="gap-6">
+      <Grid numItemsSm={2} numItemsLg={2} className="gap-6">
         {categories.map(({ title, subtitle, data }) => (
           <Card key={title} className="max-w-lg">
             <Title>{title}</Title>
@@ -108,42 +74,14 @@ export default function AnalyticsMockup() {
               <Text>
                 <Bold>{subtitle}</Bold>
               </Text>
-              <Text>
-                <Bold>Visitors</Bold>
+              <Text className="ml-auto">
+                <Bold>Count</Bold>
               </Text>
             </Flex>
             <BarList
-              // @ts-ignore
-              data={data.map(({ name, value, code }) => ({
-                name,
-                value,
-                icon: () => {
-                  if (title === "Top Referrers") {
-                    return (
-                      <Image
-                        src={`https://www.google.com/s2/favicons?sz=64&domain_url=${name}`}
-                        alt={name}
-                        className="mr-2.5"
-                        width={20}
-                        height={20}
-                      />
-                    );
-                  } else if (title === "Countries") {
-                    return (
-                      <Image
-                        src={`https://flag.vercel.app/m/${code}.svg`}
-                        className="mr-2.5"
-                        alt={code}
-                        width={24}
-                        height={16}
-                      />
-                    );
-                  } else {
-                    return null;
-                  }
-                },
-              }))}
+              data={data}
               className="mt-2"
+               // Secondary color for visual consistency
             />
           </Card>
         ))}

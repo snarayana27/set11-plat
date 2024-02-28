@@ -4,16 +4,13 @@ import { getSiteFromPostId } from "@/lib/actions";
 import {
   ArrowLeft,
   BarChart3,
+  Calendar,
   Edit3,
-  FileCode,
-  Github,
   Globe,
-  Layout,
   LayoutDashboard,
-  Megaphone,
   Menu,
   Newspaper,
-  Settings,
+  Settings
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -25,29 +22,11 @@ import {
 import { ReactNode, useEffect, useMemo, useState } from "react";
 
 const externalLinks = [
+
+
   {
-    name: "Read announcement",
-    href: "https://vercel.com/blog/platforms-starter-kit",
-    icon: <Megaphone width={18} />,
-  },
-  {
-    name: "Star on GitHub",
-    href: "https://github.com/vercel/platforms",
-    icon: <Github width={18} />,
-  },
-  {
-    name: "Read the guide",
-    href: "https://vercel.com/guides/nextjs-multi-tenant-application",
-    icon: <FileCode width={18} />,
-  },
-  {
-    name: "View demo site",
-    href: "https://demo.vercel.pub",
-    icon: <Layout width={18} />,
-  },
-  {
-    name: "Deploy your own",
-    href: "https://vercel.com/templates/next.js/platforms-starter-kit",
+    name: "Host on Set11",
+    href: "https://set11.com",
     icon: (
       <svg
         width={18}
@@ -95,6 +74,12 @@ export default function Nav({ children }: { children: ReactNode }) {
           href: `/site/${id}/analytics`,
           isActive: segments.includes("analytics"),
           icon: <BarChart3 width={18} />,
+        },
+        {
+          name: "Calendar",
+          href: `/site/${id}/analytics`,
+          isActive: segments.includes("analytics"),
+          icon: < Calendar width={18} />,
         },
         {
           name: "Settings",
