@@ -1,10 +1,12 @@
 "use client";
 
-import Link from "next/link";
+import { getSiteFromPostId } from "@/lib/actions";
 import {
   ArrowLeft,
   BarChart3,
   Edit3,
+  FileCode,
+  Github,
   Globe,
   Layout,
   LayoutDashboard,
@@ -12,17 +14,15 @@ import {
   Menu,
   Newspaper,
   Settings,
-  FileCode,
-  Github,
 } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 import {
   useParams,
   usePathname,
   useSelectedLayoutSegments,
 } from "next/navigation";
 import { ReactNode, useEffect, useMemo, useState } from "react";
-import { getSiteFromPostId } from "@/lib/actions";
-import Image from "next/image";
 
 const externalLinks = [
   {
@@ -157,17 +157,18 @@ export default function Nav({ children }: { children: ReactNode }) {
 
   return (
     <>
-      <button
-        className={`fixed z-20 ${
-          // left align for Editor, right align for other pages
-          segments[0] === "post" && segments.length === 2 && !showSidebar
-            ? "left-5 top-5"
-            : "right-5 top-7"
-        } sm:hidden`}
-        onClick={() => setShowSidebar(!showSidebar)}
-      >
-        <Menu width={20} />
-      </button>
+<button
+  className={`fixed z-20 ${
+    segments[0] === "post" && segments.length === 2 && !showSidebar
+      ? "left-5 top-5"
+      : "right-5 top-7"
+  } sm:hidden`}
+  onClick={() => setShowSidebar(!showSidebar)}
+  title="Toggle sidebar" // Adding title for accessibility
+>
+  <Menu width={20} />
+</button>
+
       <div
         className={`transform ${
           showSidebar ? "w-full translate-x-0" : "-translate-x-full"

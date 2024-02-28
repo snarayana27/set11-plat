@@ -1,14 +1,14 @@
 "use client";
 
-import { useEffect, useState, useTransition } from "react";
-import { Post } from "@prisma/client";
 import { updatePost, updatePostMetadata } from "@/lib/actions";
-import { Editor as NovelEditor } from "novel";
-import TextareaAutosize from "react-textarea-autosize";
 import { cn } from "@/lib/utils";
-import LoadingDots from "./icons/loading-dots";
+import { Post } from "@prisma/client";
 import { ExternalLink } from "lucide-react";
+import { Editor as NovelEditor } from "novel";
+import { useEffect, useState, useTransition } from "react";
+import TextareaAutosize from "react-textarea-autosize";
 import { toast } from "sonner";
+import LoadingDots from "./icons/loading-dots";
 
 type PostWithSite = Post & { site: { subdomain: string | null } | null };
 
@@ -43,13 +43,15 @@ export default function Editor({ post }: { post: PostWithSite }) {
       <div className="absolute right-5 top-5 mb-5 flex items-center space-x-3">
         {data.published && (
           <a
-            href={url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center space-x-1 text-sm text-stone-400 hover:text-stone-500"
-          >
-            <ExternalLink className="h-4 w-4" />
-          </a>
+  href={url}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex items-center space-x-1 text-sm text-stone-400 hover:text-stone-500"
+  aria-label="View Post" // Adding aria-label for accessibility
+>
+  <ExternalLink className="h-4 w-4" />
+</a>
+
         )}
         <div className="rounded-lg bg-stone-100 px-2 py-1 text-sm text-stone-400 dark:bg-stone-800 dark:text-stone-500">
           {isPendingSaving ? "Saving..." : "Saved"}
