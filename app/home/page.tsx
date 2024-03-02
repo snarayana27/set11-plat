@@ -12,7 +12,7 @@ export default function HomePage() {
         className="w-48"
       />
       <h1 className="text-white">
-        Coming soon{" "}
+        SET11 will be launching soon!!{" "}
         <InlineSnippet className="ml-2 bg-blue-900 text-blue-100">
           set11
         </InlineSnippet>
