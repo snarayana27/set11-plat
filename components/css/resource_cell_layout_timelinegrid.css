@@ -1,0 +1,363 @@
+@media (min-width: 1024px) {
+  .czs {
+    -moz-column-gap: 4rem;
+    column-gap: 4rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .cyn {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .cux {
+    display: grid;
+  }
+}
+
+@media (min-width: 1280px) {
+  .dhk {
+    grid-column: span 8 / span 8;
+  }
+}
+
+@media (min-width: 1024px) {
+  .cry {
+    grid-column: span 7 / span 7;
+  }
+}
+
+.awo {
+  line-height: 1.5rem;
+}
+
+.avz {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.lh {
+  margin-top: 1rem;
+}
+
+ol,
+ul,
+menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 1280px) {
+  .dgj {
+    position: static;
+  }
+}
+
+.asd {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.lx {
+  display: flex;
+}
+
+.ads {
+  border-radius: 10px;
+}
+
+.uo {
+  flex: none;
+}
+
+.rm {
+  width: 3.5rem;
+}
+
+.nk {
+  height: 3.5rem;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  vertical-align: middle;
+}
+
+.abl> :not([hidden])~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.un {
+  flex: 1 1 auto;
+}
+
+@media (min-width: 1280px) {
+  .dmy {
+    padding-right: 0px;
+  }
+}
+
+.axu {
+  --tw-text-opacity: 1;
+  color: rgb(17 24 39 / var(--tw-text-opacity));
+}
+
+.awf {
+  font-weight: 600;
+}
+
+.atv {
+  padding-right: 2.5rem;
+}
+
+@media (min-width: 1280px) {
+  .dkl {
+    flex-direction: row;
+  }
+}
+
+.axq {
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+
+.yr {
+  flex-direction: column;
+}
+
+.lx {
+  display: flex;
+}
+
+.lb {
+  margin-top: 0.5rem;
+}
+
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+  margin: 0;
+}
+
+.yx {
+  align-items: flex-start;
+}
+
+.lx {
+  display: flex;
+}
+
+.kt {
+  margin-top: 0.125rem;
+}
+
+.t {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.axo {
+  --tw-text-opacity: 1;
+  color: rgb(156 163 175 / var(--tw-text-opacity));
+}
+
+.sb {
+  width: 1.25rem;
+}
+
+.nz {
+  height: 1.25rem;
+}
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  vertical-align: middle;
+}
+
+.abi> :not([hidden])~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.75rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+@media (min-width: 1280px) {
+  .dms {
+    padding-left: 0.875rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .dlq {
+    --tw-border-opacity: 0.5;
+  }
+}
+
+@media (min-width: 1280px) {
+  .dlp {
+    --tw-border-opacity: 1;
+    border-color: rgb(156 163 175 / var(--tw-border-opacity));
+  }
+}
+
+@media (min-width: 1280px) {
+  .dll {
+    border-left-width: 1px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .din {
+    margin-top: 0px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .die {
+    margin-left: 0.875rem;
+  }
+}
+
+.yx {
+  align-items: flex-start;
+}
+
+.lx {
+  display: flex;
+}
+
+.lb {
+  margin-top: 0.5rem;
+}
+
+.fc-datagrid-cell-cushion.fc-scrollgrid-sync-inner:hover {
+  background: #166f32;
+}
+
+/* MyCalendar.css */
+.fc-timeline-slots td {
+  /* Define the blur effect for past cells */
+  filter: blur(2px);
+  /* Adjust blur intensity as needed */
+  pointer-events: none;
+  /* Disable pointer events on past cells */
+}
+
+.fc-timeline-slots td.fc-timeline-slot-lane {
+  /* If you want to retain lane labels but blur the content */
+  filter: blur(2px);
+  pointer-events: none;
+}
+
+/* Optionally, you may want to adjust the opacity of past cells */
+.fc-timeline-slots td.fc-slot-past {
+  opacity: 0.5;
+  background: repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 10px, rgba(0, 0, 0, 0.3) 10px, rgba(0, 0, 0, 0.3) 20px);
+  /* Adjust opacity as needed */
+}
+
+.fc .fc-datagrid-header .fc-datagrid-cell-frame {
+  left: 1rem;
+}
+
+th.fc-datagrid-cell {
+  background-color: #166f32;
+  color: #fff;
+}
+
+th.fc-datagrid-cell:hover {
+  background-color: #27a54f;
+  color: #fff;
+  cursor: pointer;
+}
+
+.fc .fc-timeline-header-row:last-child .fc-timeline-slot-frame {
+  overflow: hidden;
+  /* text-align: center; */
+  justify-content: center;
+  background: #166f32;
+  color: #fff;
+}
+
+li.ab.lx.abl.dgj {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h3.atv.awf.axu.dmy {
+  padding: 0;
+}
+
+.abl> :not([hidden])~ :not([hidden]) {
+  /* padding: 0; */
+  margin: 0;
+}
+
+dl.lb.lx.yr.axq.dkl {
+  font-size: 0.7rem;
+}
+
+/* .fc table {
+  border-collapse: collapse;
+  border-spacing: 0px;
+  font-size: 1em 
+}
+
+.fc .fc-col-header-cell-cushion {
+  display: inline-block;
+  padding: 2px 4px;
+  width: 100%;
+  text-overflow: ellipsis;
+    overflow-x: hidden;
+} */
+
+@media (max-width:600px) {
+.fc table {
+    /* border-collapse: collapse;
+    border-spacing: 0px;
+    font-size: 0.5em; */
+  }
+}
